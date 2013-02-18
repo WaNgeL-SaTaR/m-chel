@@ -161,7 +161,56 @@ Handlebars.registerHelper('attachNames', function(items) {
 	        });
         });
 
+
 	this.get("#/categorytag/:category/:tag", function() {
+	    var context = this;
+	    var category = this.params['category'];
+	    var tag = this.params['tag'];
+        var link = "/json/categorytag";
+        if (this.params['sort']) {
+            link = "/json/categorytag"
+        }
+
+        $('#main').empty();
+        $('#premain').empty();
+        this.load("/json/categories", {"json":true})
+		    .then(function(categories) {
+                var cat = {};
+                for (i in categories) {
+                    if (categories[i].catName == category) {
+                        cat = categories[i];
+                    }
+                }
+                this.load('/json/tagscategory?category=' + encodeURIComponent(category), {"json":true})
+                    .then(function(tags) {
+	                    this.load(link + '?category=' + encodeURIComponent(category) + "&tag=" + tag, {"json":true})
+		                    .then(function(items) {
+		                        $("#main").fadeIn('fast', function() {
+                                        context.render('templates/category.mustache',
+                                                       {"items":items,
+                                                        "tags":tags,
+                                                        "catTitle":cat.catTitle,
+                                                        "tags":tags,
+                                                        "catId":cat.catId,
+                                                        "catContent":cat.catContent,
+                                                        "catName":category})
+			                    .replace('#main')
+			                    .then(function () {
+				                $("#main").fadeIn('fast');
+	                                        $('.nav li').removeClass('active');
+				                $('#cat_' + category).addClass('active');
+                                                checkLoggedIn();
+	                                    });
+		                    });
+	                        });
+                        });
+
+	        });
+        });
+
+
+        // deprecated
+	this.get("#/categorytag1/:category/:tag", function() {
 	    var context = this;
 	    var category = this.params['category'];
 	    var tag = this.params['tag'];
@@ -529,6 +578,7 @@ Handlebars.registerHelper('attachNames', function(items) {
             var context = this;
             var categories = cache.get("categories");
 
+            alert(555);
             for (i in categories) {
                 if (categories[i].catName == this.params.catName) {
                     alert("Такой раздел уже есть...");
@@ -696,11 +746,11 @@ Handlebars.registerHelper('attachNames', function(items) {
 	    var context = this;
 	    // Display categories
 	    this.load('/json/categories', {"json":true})
-		.then(function(items) {
-		    cache.set("categories", items);
-		    this.renderEach('templates/categories.template',items)
-			.replace('#categories');
-		});
+		    .then(function(items) {
+		        cache.set("categories", items);
+		        this.renderEach('templates/categories.template',items)
+			        .replace('#categories');
+		    });
 	});
 
         this.bind('update-requests', function() {

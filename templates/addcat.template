@@ -23,6 +23,11 @@
 	   name="catName"
 	   placeholder="Вводить здесь..."
 	   required/>
+
+    <label>метки</label>
+    <input type="text"
+	   name="catTags"
+	   placeholder="Вводить тэги здесь..." />
     <br/>
     <br/>
     <div class="btn-group">
