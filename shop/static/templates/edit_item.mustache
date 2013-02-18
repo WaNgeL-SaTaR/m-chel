@@ -1,0 +1,106 @@
+<script>
+  (function() {
+
+  var bar = $('.bar');
+  var progressDiv = $('.progress');
+  var percent = $('.percent');
+  var status = $('#status');
+
+  $('.imageform').ajaxForm({
+  beforeSend: function() {
+  status.empty();
+  var percentVal = '0%';
+  progressDiv.addClass("active");
+  bar.width(percentVal);
+  percent.html(percentVal);
+  },
+  uploadProgress: function(event, position, total, percentComplete) {
+  var percentVal = percentComplete + '%';
+  bar.width(percentVal)
+  percent.html(percentVal);
+  },
+  complete: function(xhr) {
+  var percentVal = '100' + '%';
+  bar.width(percentVal)
+  percent.html(percentVal);
+  progressDiv.removeClass("active");
+  status.html(xhr.responseText);
+  window.location.reload( true);
+  }
+  });
+
+  })();
+</script>
+
+
+<div class="page-header">
+  <h1>
+    Редактирование товара
+    <small>
+      Можно добавить дополнительные изображения
+    </small>
+  </h1>
+</div>
+
+
+<form  action="#/edit" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="id" value="{{ _id }}" />
+  <label> Заголовок:</label>
+  <input type="text"  name="title" value="{{ title }}" />
+  <br>
+
+
+
+  <label class="control-label" for="select01">
+    Раздел:
+  </label>
+  <div class="controls">
+    <select name="category" id="select01" required>
+      <option></option>
+      {{#categories}}
+      <option value="{{catName}}" {{#isSelected}}selected{{/isSelected}}>{{catTitle}}</option>
+      {{/categories}}
+    </select>
+  </div>
+
+  <label>Описание: </label>
+  <input type="text" name="description" value="{{ description }}" />
+  <br>
+  <label>Тэги: </label>
+  <input type="text" name="tags" value="{{ tags }}" />
+
+  <label>Старая цена: </label>
+  <input type="text" name="old_cost" style="text-decoration:line-through;" value="{{ old_cost }}"></input>
+
+  <label>Цена: </label>
+  <input type="text" name="cost" required  value="{{ cost }}" />
+  <br/>
+  <button type="submit" class="btn btn-success">Изменить</button>
+
+</form>
+
+<div class="progress progress-striped active">
+  <div class="bar"></div >
+  <div class="percent">0%</div >
+</div>
+<div class="status"> </div>
+<form class="imageform" action="/json/uploadimage" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="id" value="{{ _id }}" />
+  <input type="hidden" name="name" value="1.jpeg" />
+  <input type="file" name="image" alt="выбрать"  value="выбрать"><br />
+  <button class="btn btn-invert" type="submit">Закачать изображение</button>
+</form>
+
+<div class="row">
+{{#each_hash _attachments}}
+  <div class="span4 well" id="image_{{_key}}">
+    <h3>Изображение {{_key}}: </h3>
+     <div  class="image-galery2" >
+       <a href="/json/image?id={{../_id}}&image={{_key}}" rel="lightbox"><img id="item_img1" class="img-polaroid" src="/json/image?id={{../_id}}&image={{_key}}"></img></a>
+     </div>
+     <a href="#/image/delete/{{../_id}}/{{_key}}">удалить</a>
+  </div>
+{{/each_hash}}
+</div>
+
+</div>

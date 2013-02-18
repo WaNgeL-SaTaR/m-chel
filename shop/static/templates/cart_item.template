@@ -1,0 +1,27 @@
+<form action="#/cart_delete" method="post">
+  <input type="hidden" name="id" value="<%= _id %>" />
+  <input type="hidden" name="cost" value="<%= cost %>" />
+
+  <div class="row-fluid">
+    <div class="span1">
+      <h1><%= count %></h1>
+    </div>
+    <div class="span1">
+      <h1>×</h1>
+    </div>
+    <div class="span6">
+      <h2><%= title %></h2>
+      <span class="label label-info">Цена: <%= cost %> руб.</span>
+    </div>
+    <div class="span1">
+      <h1>=</h1>
+    </div>
+    <div class="span2">
+      <h1><%= cost*count %> руб.</h1>
+    </div>
+    <div class="span1">
+      <button type="submit" class="btn btn-danger">Убрать</button>
+    </div>
+  </div>
+</form>
+<hr>

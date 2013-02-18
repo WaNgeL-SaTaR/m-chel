@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>
+    Корзина
+    <small>
+
+    </small>
+  </h1>
+</div>
+
+<form method="post" action="#/checkout">
+  <label>Имя:</label>
+  <input type="text"f
+	 title="Название должно быть введено"
+	 x-moz-errormessage="Название должно быть введено"
+	 name="requestName"
+	 placeholder="Вводить здесь..."
+	 required />
+
+  <label>Телефон:</label>
+  <input type="text"
+	 title="Название должно быть введено"
+	 x-moz-errormessage="Название должно быть введено"
+	 name="requestTelephone"
+	 placeholder="Вводить здесь..."
+	 required />
+
+  <label>Дополнительная информация:</label>
+  <textarea type="text"
+	 name="requestDescription"
+	 placeholder="Вводить здесь..."/>
+
+  <div class="btn-group">
+    <a href="javascript:history.back();" class="btn btn-large">Закрыть</a>
+    <a class="btn btn-large btn-danger"  href="#/cart_clear">Очистить корзину</a>
+    <button type="submit" class="btn btn-primary btn-large">Оформить</button>
+  </div>
+</form>

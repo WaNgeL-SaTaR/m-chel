@@ -1,0 +1,33 @@
+<div id="addCatModal">
+  <div class="page-header">
+    <h1>
+      Добавить раздел
+      <small>
+	Он появится слева
+      </small>
+    </h1>
+  </div>
+  <form action="#/addcat" method="post">
+    <!--<legend>Добавить раздел</legend>-->
+    <label>Название (русскими буквами, например Спиртные напитки): </label>
+    <input type="text"
+	   title="Название должно быть введено"
+	   x-moz-errormessage="Название должно быть введено"
+	   name="catTitle"
+	   placeholder="Вводить здесь..."
+	   required />
+    <label>Идентификация (одним словом и строчными буквами, например: "спиртныенапитки"):</label>
+    <input type="text"
+	   title="Название должно быть введено"
+	   x-moz-errormessage="Название должно быть введено"
+	   name="catName"
+	   placeholder="Вводить здесь..."
+	   required/>
+    <br/>
+    <br/>
+    <div class="btn-group">
+      <a href="javascript:history.back();" class="btn btn-large">Закрыть</a>
+      <button type="submit" class="btn btn-primary btn-large"> Добавить</button>
+    </div>
+  </form>
+</div>

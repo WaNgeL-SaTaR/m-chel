@@ -1,0 +1,37 @@
+<div itemscope itemtype="http://schema.org/Offer" class="container well span4">
+  <!-- <span itemprop="name">Blend-O-Matic</span> -->
+  <!-- <span itemprop="price">$19.95</span> -->
+  <!-- <span itemprop="availability">Уже в продаже!</span> -->
+
+<form action="#/cart" method="post">
+  <input type="hidden" name="id" value="<%= _id %>" />
+  <input type="hidden" name="cost" value="<%= cost %>" />
+    <h1>  {{ title }} </h1>
+    <img src="/json/image?id={{ _id }}"></img>
+    <a href="#/category/{{category}}">{{catTitle}}</a>
+    <p class="well">
+      {{ description }}
+    </p>
+    <a class="admin-only" href="#/edit/{{ _id }}">редактировать </a>
+    <!-- <span class="rating"> -->
+    <!--   <span class="star"></span> -->
+    <!--   <span class="star"></span> -->
+    <!--   <span class="star"></span> -->
+    <!--   <span class="icon-star"></span> -->
+    <!--   <span class="star"></span> -->
+    <!-- </span> -->
+
+    <div class="row-fluid">
+      <div class="span6">
+
+	<span style="text-decoration:line-through;" class="label label-important">{{ old_cost }} руб.</span>
+	<span class="label label-info">{{ cost }} руб.</span>
+      </div>
+
+      <div class="span2"></div>
+      <div class="span4">
+	<button type="submit" class="btn-success"><i class="icon-shopping-cart icon-large" ></i> В корзину</button>
+      </div>
+    </div>
+</form>
+</div>
