@@ -1,0 +1,79 @@
+<!-- Info from customer  -->
+<div class="well">
+  <div class="row-fluid">
+    <div class="span4">
+      <h3><i class="icon-user"></i> {{requestName}}</h3>
+      <h3><i class="icon-phone"></i> {{ requestTelephone }}</h3>
+      <p> <span class="label">{{ requestDate }}</span></p>
+	  {{#requestNew}}
+	  <span class="label label-info">НОВОЕ</span>
+	  {{/requestNew}}
+
+    </div>
+    <div class="span6">
+      <h4>{{ requestDescription }}</h4>
+    </div>
+    <div class="span2">
+      <a class="btn btn-danger" href="#/deletereq/{{requestId}}">
+	<i class="icon-pencil"></i> удалить</a>
+    </div>
+  </div>
+  <hr>
+  <!---->
+  <!-- Customer cart -->
+  {{#requestItems}}
+  <div class="row-fluid wvrp">
+    <div class="span2">
+      <h1> {{ requestCount }} ×</h1>
+    </div>
+    <div class="span7">
+      <h2>{{ requestItemName }}</h2>
+      <span class="label label-info">Цена: {{requestCost }} руб.</span>
+    </div>
+    <div class="span3">
+      <h1>= {{ total }} руб.</h1>
+    </div>
+  </div>
+  <hr>
+  {{/requestItems}}
+
+
+  <!-- Alert -->
+  <div class="alert alert-error">
+    <p><strong>Помните!</strong> Цена указана на момент оформления заказа. При необходимости
+      пересчитайте и сообщите клиенту.</p>
+  </div>
+  <h2>Итог: {{ totalCost }} руб.</h2>
+
+
+
+  <form class="hide" action="#/cart_delete" method="post">
+    <div class="span1">
+      <h1>  <%= requestName %> </h1>
+    </div>
+    <div class="span1">
+      <h1> × </h1>
+    </div>
+    <div class="span2">
+      <div class="row">
+	<h3>  <%=  %> </h3>
+      </div>
+      <div class="row">
+	<div class="span4">
+	  <span class="label label-info"><%=  %> руб.</span>
+	</div>
+      </div>
+    </div>
+    <div class="span1">
+      <h1> = </h1>
+    </div>
+    <div class="span2">
+      <span class="label label-info"> руб.</span>
+    </div>
+
+
+    <div class="span2">
+      <button type="submit" class="btn-danger">Убрать</button>
+    </div>
+  </form>
+</div>

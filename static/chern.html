@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title></title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- main -->
+    <link href="css/main.css" rel="stylesheet" media="screen">
+    <!-- font-awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container-fluid top-cont">
+      <div class="row-fluid">
+	<div class="span1">
+	  <img src="img/logo.png" class="logo-top" />
+	</div>
+	<div class="span1">
+	</div>
+	<div class="span2">
+	  <img class="top-img" src="img/metalprokat.png">
+	  <h3 class="text-center">Металлопрокат</h3>
+	</div>
+	<div class="span2">
+	  <img class="top-img" src="img/pipe-track.png">
+	  <h3 class="text-center">Перевозки</h3>
+	</div>
+	<div class="span2">
+	</div>
+	<div class="span4">
+	  <br>
+	  <address>
+	    <strong>Мы всегда на связи:</strong>
+	    <br>
+	    <abbr title="Телефон">тел.:</abbr> (123) 456-7890
+	    <br>
+	    <abbr title="Телефон">тел.:</abbr> (123) 456-7890
+
+	  </address>
+
+	</div>
+      </div>
+    </div>
+
+
+
+
+    <footer class="container-fluid">
+      <div class="row-fluid">
+	<div class="span3">
+	  <h5>Полезные вещи</h5>
+	  <h6>
+	    <a href="#">Калькулятор металла</a>
+	    <br>
+	    <a href="#">Сортамент</a>
+	    <br>
+	    <a href="#">Госты</a>
+	  </h6>
+	</div>
+	<div class="span3">
+	  <h5>Отзывы</h5>
+	  <blockquote>
+	    <p>Я очень доволен сотрудничеством с компанией. Металл - качественный!</p>
+	    <small>Директор</small>
+	  </blockquote>
+	</div>
+	<div class="span3">
+	  <h5>Адрес</h5>
+	  <p>
+	    <address>
+	      <strong>ООО "М-чел"</strong><br>
+	      454053, г. Челябинскx<br>
+	      Троицкий тракт, д. 11Л, оф. 602<br>
+	    </address>
+
+	  </p>
+	</div>
+	<div class="span3">
+	  <h5>Контактная информация</h5>
+<!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (начало) -->
+<div id="ymaps-map-id_136013923736678265950" style="width: 200px; height: 200px;"></div>
+
+<script type="text/javascript">function fid_136013923736678265950(ymaps) {var map = new ymaps.Map("ymaps-map-id_136013923736678265950", {center: [61.36635966227472, 55.160550093174315], zoom: 16, type: "yandex#map"});map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid", "yandex#publicMap"]));map.geoObjects.add(new ymaps.Placemark([61.366458367697405, 55.159875625508526], {balloonContent: "M-chel<br/>"}, {preset: "twirl#greenDotIcon"}));};</script>
+<script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=ru-RU&coordorder=longlat&load=package.full&wizard=constructor&onload=fid_136013923736678265950"></script>
+<!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (конец) -->
+
+	</div>
+      </div>
+      <div class="row-fluid">
+	<div class="span12">
+	  <div class="pull-right">
+	    <p>© M-Chel</p>
+	  </div>
+	</div>
+      </div>
+    </footer>
+
+
+    <!-- JS -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.zaccordion.min.js"></script>
+    <script src="js/responsiveslides.js"></script>
+
+
+  </body>
+</html>

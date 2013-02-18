@@ -1,0 +1,13 @@
+  <div class="page-header">
+    <h1>
+    Редактировать страницу
+      <small>
+{{contentTitle}}
+      </small>
+    </h1>
+  </div>
+<form class="form" action="#/editpage/{{contentId}}" method="POST">
+<label> Заголовок</label><input  class="input-large"  type="text" name="contentTitle" value="{{contentTitle}}" />
+<label> Содержимое</label><textarea type="text" rows="15" class="span12"  name="contentBody">{{contentBody}}</textarea>
+<label></label><button class="btn" type="submit" >Сохранить</button>
+</form>

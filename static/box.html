@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"> </script>
+    <script src="js/sammy.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/sammy.template.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/sammy.mustache.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/mustache.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/sammy.storage.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/sammy.json.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/sammy.push_location_proxy.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/my_sammy.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <!-- lightbox2  -->
+    <script src="js/lightbox.js"></script>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/my.css" type="text/css" />
+    <link href="css/lightbox.css" rel="stylesheet" />
+
+    <!-- карты -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.ie.css" />
+    <![endif]-->
+    <script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
+
+
+    <title>Мебельщик</title>
+
+  </head>
+
+  <body>
+    высота: <input id="in1" /><br>
+    длина: <input id="in2" /> <br>
+    дверей: <input id="in3" /> <br>
+    ящиков: <input id="in4" /> <br>
+    <button onClick="func();" >htht</button>
+
+    <div id="shkaf" class="well">
+      <div id="door1" class="well" style="display:inline;">
+      </div>
+
+      <div id="door2" class="well" style="display:inline;">
+      </div>
+      <div id="door3" class="well" style="display:inline;">
+
+      </div>
+
+    </div>
+
+
+    <script>
+      function func() {
+      var in1 = $('#in1').val();
+      var in2 = $('#in2').val();
+      var doors = $('#in3').val();
+      var in4 = $('#in4').val();
+      var aspect = in1/in2;
+      var defH = 400;
+      var defW = 400/aspect;
+      $('#shkaf').height(defH);
+      $('#shkaf').width(defW);
+      $('#shkaf').empty();
+      for (i = 0; i < doors; ++i) {
+                      $('#shkaf').append("<div id='door"  + i + "'" + " style='display:block;' class='door well'>x</div>");
+      }
+      $('.door').width(defW/doors);
+
+
+      }
+    </script>
+  </body>
+</html>
