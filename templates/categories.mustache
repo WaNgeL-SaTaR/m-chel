@@ -1,23 +1,14 @@
 {{#maincats}}
-<div class="accordion" id="">
-  <div class="accordion-group">
-    <div class="accordion-heading">
-      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="">
-	{{subCat}}
-      </a>
-    </div>
-    <div id="" class="accordion-body collapse in">
-      <div class="accordion-inner">
-	{{#cats}}
-	<li class="" id="cat_{{ catName }}">
-	  <a href="#!/category/{{ catName }}">
-	    <i class="icon-chevron-right"></i>
-	    {{ catTitle }}
-	  </a>
-	</li>
-	{{/cats}}
-      </div>
-    </div>
-  </div>
-</div>
+
+<h5>{{subCat}}</h5>
+
+{{#cats}}
+<li class="" id="cat_{{ catName }}">
+  <a href="#!/category/{{ catName }}">
+    <i class="icon-chevron-right"></i>
+    {{ catTitle }}
+  </a>
+</li>
+{{/cats}}
+
 {{/maincats}}

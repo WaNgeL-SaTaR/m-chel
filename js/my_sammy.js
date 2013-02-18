@@ -162,7 +162,7 @@ Handlebars.registerHelper('attachNames', function(items) {
         });
 
 
-	this.get("#/categorytag/:category/:tag", function() {
+	this.get("#!/categorytag/:category/:tag", function() {
 	    var context = this;
 	    var category = this.params['category'];
 	    var tag = this.params['tag'];
@@ -250,7 +250,7 @@ Handlebars.registerHelper('attachNames', function(items) {
             var id = this.params['id'];
 	    $.post("/json/delitem", {"id": id}, function(response) {
                 if (response == "ok") {
-                    context.redirect("#/category/" + cat);
+                    context.redirect("#!/category/" + cat);
                 }
                 //history.back();
                 //context.next(JSON.parse(response));
@@ -400,7 +400,7 @@ Handlebars.registerHelper('attachNames', function(items) {
 //////////////////////////////////
 // STATIC
 /////////////////////////////////
-	this.get("#/discount", function() {
+	this.get("#!/discount", function() {
             $('#premain').empty();
 	    $('#menu_discount').addClass('active');
             this.render('templates/main.mustache', {"contentId":"discount"})
@@ -515,7 +515,7 @@ Handlebars.registerHelper('attachNames', function(items) {
             });
         });
 
-        this.get("#/feedbacks", function() {
+        this.get("#!/feedbacks", function() {
             var context = this;
             $('#premain').empty();
 

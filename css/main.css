@@ -44,6 +44,11 @@ body {
 }
 /**/
 
+.options {
+    color: red;
+    font-weight: bold;
+}
+
 .triple-div {
     width: 33.333333%;
     display: block;
