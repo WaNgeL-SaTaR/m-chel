@@ -752,12 +752,12 @@ Handlebars.registerHelper('attachNames', function(items) {
 	    this.load('/json/categories', {"json":true})
 		    .then(function(items) {
 		        cache.set("categories", items);
-                var grouped = _.groupBy(items, function (obj) {
-                    return obj.catTags[0];
-                });
-                var grouped1 = _.map(grouped, function(cat,key){ return {subCat: key, cats : cat }});
-                alert(JSON.stringify(grouped1));
-		        this.render('templates/categories.mustache', {maincats : grouped1})
+                var grouped = _.chain(items)
+                    .groupBy('catTags')
+                    .map(function(cat,key){ return {subCat: key, cats : cat }})
+                    .value();
+
+		        this.render('templates/categories.mustache', {maincats : grouped})
 			        .replace('#categories');
 		    });
 	});
