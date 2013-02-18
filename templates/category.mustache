@@ -1,77 +1,59 @@
-  <div class="page-header shadow">
-    <h1>
-      {{catTitle}}
-      <small>
-	{{{catContent}}}
-      </small>
-    </h1>
-  </div>
-  <ul class="breadcrumb">
-    {{#tags}}
-      <li><a href="#/categorytag/{{../catName}}/{{.}}">{{.}}</a> <span class="divider">/</span></li>
-    {{/tags}}
-    </ul>
-  <div>
-    <a class="cream" href="#/category/{{catName}}?sort=1"><h4>По убыванию </a>
-    <a class="cream" href="#/category/{{catName}}">По возрастанию</h4></a>
-    <div class="admin-only"><h4><a class="cream" href="#/edit_category/{{catId}}">Редактировать раздел</a></h4>
+<div class="page-header shadow">
+  <h1>
+    {{catTitle}}
+  </h1>
+      {{{catContent}}}
+</div>
+<ul class="breadcrumb">
+  {{#tags}}
+  <li><a href="#/categorytag/{{../catName}}/{{.}}">{{.}}</a> <span class="divider">/</span></li>
+  {{/tags}}
+</ul>
+<div>
+  <!--  <a class="cream" href="#/category/{{catName}}?sort=1"><h4>По убыванию </a>
+      <a class="cream" href="#/category/{{catName}}">По возрастанию</h4></a> -->
+  <div class="admin-only"><h4><a class="cream" href="#/edit_category/{{catId}}">Редактировать раздел</a></h4>
     <h4><a class="cream" href="#/delcategory/{{catName}}">Удалить раздел</a></h4>
-    </div>
-
-
   </div>
+
+<table class="table table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Наименование</th>
+      <th>Описание</th>
+	<th>Цена</th>
+	<th>Метки</th>
+      </tr>
+    </thead>
+    <tbody>
+
 
 {{#items}}
-<li class="span4">
-  <div class="thumbnail shadow">
-    <form action="#/cart" method="post">
-      <input type="hidden" name="id" value="{{ _id }}" />
-      <input type="hidden" name="cost" value="{{ cost }}" />
-      <div  class="image-galery hidden-img" >
-      {{#each_hash _attachments}}
-
-      <a rel="lightbox[item{{../_id}}]" href="/json/image?id={{../_id}}&image={{_key}}" title="{{../title}}">
-      <img alt="" src="/json/image?id={{../_id}}&image={{_key}}"></img>
-      </a>
-      {{/each_hash}}
-      </div>
-      <div class="caption">
-	<div class="story">
-	  <h3>
-	    {{ title }}
-	  </h3>
-	  <p>
-	    {{ description }}
-	  </p>
-	</div>
-        <div class="tags">
-          Тип:
-          {{#tags}}
-            <a href="#/categorytag/{{../category}}/{{.}}">{{.}}</a>
-          {{/tags}}
-        </div>
-	<p>
-	  <div>
-	    <h3 class="cost-">{{ old_cost }} руб.</h3>
-	  </div>
-	  <div>
-	    <h2 class="cost">{{ cost }} руб.</h2>
-	  </div>
-	</p>
-	<p>
-	  <button type="submit" class="btn btn-success">
-	    <i class="icon-shopping-cart icon-large" ></i>
-	    В корзину
-	  </button>
-	  <a class="admin-only btn-small btn btn-info" href="#/edit/{{ _id }}">
-	    <i class="icon-wrench icon-large" ></i>
-	    Редактировать</a>
-          <a class="admin-only btn-small btn btn-warning" href="#/deleteitem/{{category}}/{{ _id }}">
-	    <i class="icon-cut icon-large" ></i>
-	    Удалить</a>
-	</p>
-      </div>
-    </form>
-  </div>
-</li>
+     <tr>
+<td>
+  {{ title }}
+</td>
+<td>
+  {{ description }}
+</td>
+<td>
+  {{ cost }}
+</td>
+<td>
+  {{#tags}}
+  <a href="#/categorytag/{{../category}}/{{.}}">{{.}}</a>
+  {{/tags}}
+</td>
+<td>
+  <a class="admin-only btn-small btn btn-info" href="#/edit/{{ _id }}">
+    <i class="icon-edit" ></i>
+  </a>
+  <a class="admin-only btn-small btn btn-warning" href="#/deleteitem/{{category}}/{{ _id }}">
+    <i class="icon-trash" ></i>
+  </a>
+</td>
+ </tr>
 {{/items}}
+
+    </tbody>
+  </table>
