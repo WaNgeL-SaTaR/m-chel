@@ -1,8 +1,0 @@
-<div class="main-cont">
-<a class="admin-only" href="#/editpage/{{contentId}}">редактировать страницу</a>
-
-<h1>{{ contentTitle }}</h1>
-{{{ contentBody }}}
-
-
-</div>

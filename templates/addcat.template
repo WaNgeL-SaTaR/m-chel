@@ -8,7 +8,7 @@
     </h1>
   </div>
   <form action="#/addcat" method="post">
-    <!--<legend>Добавить раздел</legend>-->
+    <!-- <legend>Добавить раздел</legend> -->
     <label>Название (русскими буквами, например Спиртные напитки): </label>
     <input type="text"
 	   title="Название должно быть введено"

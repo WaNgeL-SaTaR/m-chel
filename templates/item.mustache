@@ -1,24 +1,52 @@
-<tr>
+<li class="span4">
+  <div class="thumbnail shadow">
+    <form action="#/cart" method="post">
+      <input type="hidden" name="id" value="{{ _id }}" />
+      <input type="hidden" name="cost" value="{{ cost }}" />
+      <div  class="image-galery hidden-img" >
+      {{#each_hash _attachments}}
 
-  <td>
-    {{ title }}
-  </td>
-  <td>
-    {{ description }}
-  </td>
-  <td>
-    {{ cost }}
-  </td>
-  <td>
-    {{ tags }}
-  </td>
-  <td>
-    <a class="admin-only btn-small btn btn-info" href="#/edit/{{ _id }}">
-      <i class="icon-wrench icon-large" ></i>
-     </a>
-    <a class="admin-only btn-small btn btn-warning" href="#/deleteitem/{{category}}/{{ _id }}">
-      <i class="icon-cart icon-large" ></i>
+      <a rel="lightbox[item{{../_id}}]" href="/json/image?id={{../_id}}&image={{_key}}">
+      <img alt="" src="/json/image?id={{../_id}}&image={{_key}}"></img>
       </a>
-  </td>
-
-</tr>
+      {{/each_hash}}
+      </div>
+      <div class="caption">
+	<div class="story">
+	  <h3>
+	    {{ title }}
+	  </h3>
+	  <p>
+	    {{ description }}
+	  </p>
+	</div>
+        <div class="tags">
+          Тип:
+          {{#tags}}
+            <a href="#/categorytag/{{../category}}/{{.}}">{{.}}</a>
+          {{/tags}}
+        </div>
+	<p>
+	  <div>
+	    <h3 class="cost-">{{ old_cost }} руб.</h3>
+	  </div>
+	  <div>
+	    <h2 class="cost">{{ cost }} руб.</h2>
+	  </div>
+	</p>
+	<p>
+	  <button type="submit" class="btn btn-success">
+	    <i class="icon-shopping-cart icon-large" ></i>
+	    В корзину
+	  </button>
+	  <a class="admin-only btn-small btn btn-info" href="#/edit/{{ _id }}">
+	    <i class="icon-wrench icon-large" ></i>
+	    Редактировать</a>
+          <a class="admin-only btn-small btn btn-warning" href="#/deleteitem/{{category}}/{{ _id }}">
+	    <i class="icon-cart icon-large" ></i>
+	    Удалить</a>
+	</p>
+      </div>
+    </form>
+  </div>
+</li>
