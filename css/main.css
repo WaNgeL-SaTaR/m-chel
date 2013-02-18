@@ -45,6 +45,16 @@ body {
 }
 /**/
 
+.adres {
+    padding-top: 5px;
+    line-height: 14px;
+    font-size: 11px;
+}
+
+.adres strong {
+    font-size: 14px;
+}
+
 .options {
     color: red;
     font-weight: bold;
@@ -172,6 +182,12 @@ body {
     display:block;
     margin:0 auto;
     height: 85px;
+}
+
+.top-img-house {
+    display:block;
+    margin:0 auto;
+    height: 60px;
 }
 
 .logo-top {
