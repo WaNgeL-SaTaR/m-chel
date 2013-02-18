@@ -48,7 +48,7 @@
 	</div>
 	<div class="span2 top-margin">
 	  <img class="top-img" src="img/metalprokat.png">
-	  <p class="text-center top-ico">Металлопрокат</p>
+	  <span class="text-center top-ico">Металлопрокат</span>
 	</div>
 	<div class="span2 top-margin">
 	  <img class="top-img" src="img/pipe-track.png">
@@ -66,7 +66,23 @@
 	</div>
       </div>
     </div>
-
+    <div class="triple">
+      <a href="#">
+	<div class="triple-div">
+	  <h3 class="text-center">Черный металлопрокат</h3>
+	</div>
+      </a>
+      <a href="#">
+	<div class="triple-div triple-border">
+	  <h3 class="text-center">Нержавеющий металлопрокат</h3>
+	</div>
+      </a>
+      <a href="#">
+	<div class="triple-div triple-border">
+	  <h3 class="text-center">Цветной металлопрокат</h3>
+	</div>
+      </a>
+    </div>
 
     <!-- Navbar
 	      <li id="menu_about">
@@ -131,7 +147,7 @@
       </div>
     </div>
 
-      <footer class="container-fluid">
+    <footer class="container-fluid">
       <div class="row-fluid">
 	<div class="span3">
 	  <h4>Полезные вещи</h4>
@@ -162,36 +178,45 @@
 	  </p>
 	</div>
 	<div class="span3 footer-border">
-	  <h4>Карта проезда</h4>
-	  <!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (начало) --><div id="ymaps-map-id_136116114549463095562" style="width: 200px; height: 200px;"><script type="text/javascript">function fid_136116114549463095562(ymaps) {var map = new ymaps.Map("ymaps-map-id_136116114549463095562", {center: [61.3858394271342, 55.11321177984216],zoom: 16,type: "yandex#map"});map.controls.add("zoomControl").add("mapTools").add(new ymaps.control.TypeSelector(["yandex#map", "yandex#satellite", "yandex#hybrid", "yandex#publicMap"]));map.geoObjects.add(new ymaps.Placemark([61.385787928852096, 55.112893210378495], {balloonContent: 'ООО "М-Чел"'}, {preset: "twirl#blueDotIcon"}));};</script><script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?lang=ru-RU&coordorder=longlat&load=package.full&wizard=constructor&onload=fid_136116114549463095562"></script><!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (конец) -->
+
+	  <a href="#myModal" role="button" class="btn" data-toggle="modal">Карта проезда</a>
+
+	  <!-- Modal -->
+	  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-header">
+	      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	      <h3 id="myModalLabel">Карта проезда</h3>
+	    </div>
+	    <div class="modal-body">
+<iframe width="525" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=61.38343,55.11181,61.38861,55.11473&amp;layer=mapnik&amp;marker=55.11316,61.38593" style="border: 1px solid black"></iframe><br /><small><a href="http://www.openstreetmap.org/?lat=55.11327&amp;lon=61.38602&amp;zoom=17&amp;layers=M&amp;mlat=55.11316&amp;mlon=61.38593">Увеличить карту</a></small>
+
+
+	      </div>
+	    </div>
+	  </div>
+
+
 	</div>
       </div>
-      <div class="row-fluid">
-	<div class="span12">
-	  <div class="pull-right">
-	    <p>© M-Chel</p>
-	  </div>
+    </footer>
+
+
+
+    <!-- Modals  -->
+    <div class="modal hide fade" id="myModal">
+      <form action="#/login" method="post">
+	<div class="modal-header">
+	  <button type="button" class="close" data-dismiss="modal">×</button>
+	  <h3>Авторизация</h3>
 	</div>
-      </div>
-      </footer>
-
-
-
-      <!-- Modals  -->
-      <div class="modal hide fade" id="myModal">
-	<form action="#/login" method="post">
-	  <div class="modal-header">
-	    <button type="button" class="close" data-dismiss="modal">×</button>
-	    <h3>Авторизация</h3>
-	  </div>
-	  <div class="modal-body">
-	    <input type="password" name="pass" class="input" placeholder="Введите здесь пароль">
-	  </div>
-	  <div class="modal-footer">
-	    <a href="#" class="btn" data-dismiss="modal">Закрыть</a>
-	    <button type="submit" class="btn btn-primary"> Войти</button>
-	  </div>
-	</form>
-      </div>
+	<div class="modal-body">
+	  <input type="password" name="pass" class="input" placeholder="Введите здесь пароль">
+	</div>
+	<div class="modal-footer">
+	  <a href="#" class="btn" data-dismiss="modal">Закрыть</a>
+	  <button type="submit" class="btn btn-primary"> Войти</button>
+	</div>
+      </form>
+    </div>
   </body>
 </html>
