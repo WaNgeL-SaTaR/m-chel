@@ -744,11 +744,20 @@ Handlebars.registerHelper('attachNames', function(items) {
 
 	this.bind('update-categories', function() {
 	    var context = this;
+
+
+
+
 	    // Display categories
 	    this.load('/json/categories', {"json":true})
 		    .then(function(items) {
 		        cache.set("categories", items);
-		        this.renderEach('templates/categories.template',items)
+                var grouped = _.groupBy(items, function (obj) {
+                    return obj.catTags[0];
+                });
+                var grouped1 = _.map(grouped, function(cat,key){ return {subCat: key, cats : cat }});
+                alert(JSON.stringify(grouped1));
+		        this.render('templates/categories.mustache', {maincats : grouped1})
 			        .replace('#categories');
 		    });
 	});
