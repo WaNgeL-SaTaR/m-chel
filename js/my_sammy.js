@@ -116,7 +116,7 @@ Handlebars.registerHelper('attachNames', function(items) {
 	    this.redirect("#/");
         });
 
-	this.get("#/category/:category", function() {
+	this.get("#!/category/:category", function() {
 	    var context = this;
 	    var category = this.params['category'];
             var link = "/json/category";
@@ -209,48 +209,6 @@ Handlebars.registerHelper('attachNames', function(items) {
         });
 
 
-        // deprecated
-	this.get("#/categorytag1/:category/:tag", function() {
-	    var context = this;
-	    var category = this.params['category'];
-	    var tag = this.params['tag'];
-            var link = "/json/categorytag";
-            if (this.params['sort']) {
-                link = "/json/categorytag"
-            }
-            var categories = cache.get("categories");
-            var cat = {};
-            for (i in categories) {
-                if (categories[i].catName == category) {
-                    cat = categories[i];
-                }
-            }
-            $('#main').empty();
-            this.load('/json/tagscategory?category=' + category, {"json":true})
-                .then(function(tags) {
-                    context.render('templates/category_content.mustache',
-                                   {"catTitle":cat.catTitle,
-                                    "tags":tags,
-                                    "catId":cat.catId,
-                                    "catContent":cat.catContent,
-                                    "catName":category})
-                        .replace('#premain');
-                });
-
-	    this.load(link + '?category=' + category + "&tag=" + tag, {"json":true})
-		.then(function(items) {
-		    $("#main").fadeIn('fast', function() {
-                        context.renderEach('templates/item.mustache',items)
-			    .replace('#main')
-			    .then(function () {
-				$("#main").fadeIn('fast');
-	                        $('.nav li').removeClass('active');
-				$('#cat_' + category).addClass('active');
-                                checkLoggedIn();
-	                    });
-		    });
-	    });
-	});
 
 	this.around(function(callback) {
 	    var context = this;
@@ -455,7 +413,7 @@ Handlebars.registerHelper('attachNames', function(items) {
 	        });
 	});
 
-	this.get("#/deliver", function() {
+	this.get("#!/deliver", function() {
             $('#premain').empty();
 	    $('#menu_deliver').addClass('active');
             this.render('templates/main.mustache', {"contentId":"deliver"})
@@ -468,7 +426,7 @@ Handlebars.registerHelper('attachNames', function(items) {
 	        });
 	});
 
-	this.get("#/contacts", function() {
+	this.get("#!/contacts", function() {
             $('#premain').empty();
 	    $('#menu_contacts').addClass('active');
             this.render('templates/main.mustache', {"contentId":"contacts"})
@@ -481,7 +439,7 @@ Handlebars.registerHelper('attachNames', function(items) {
 	        });
 	});
 
-	this.get("#/address", function() {
+	this.get("#!/address", function() {
             $('#premain').empty();
 	    $('#menu_address').addClass('active');
             this.render('templates/main.mustache', {"contentId":"address"})
@@ -494,7 +452,7 @@ Handlebars.registerHelper('attachNames', function(items) {
 	        });
         });
 
-	this.get("#/page/:page", function() {
+	this.get("#!/page/:page", function() {
             var page = this.params['page'];
             $('#premain').empty();
 	    $('#menu_' + page).addClass('active');
@@ -709,22 +667,22 @@ Handlebars.registerHelper('attachNames', function(items) {
 
 
         this.get("", function() {
-	    $('#menu_main').addClass('active');
+	        $('#menu_main').addClass('active');
 
             $('#premain').empty();
-	    this.trigger('update-categories');
+	        this.trigger('update-categories');
 
             var context = this;
             this.id = "main";
             this.contentId = "main";
             this.render('templates/main.mustache', {"contentId":"main"})
                 .replace("#main");
-	    this.load("/json/content?id=main", {"json":true})
-		.render('templates/main.mustache')
-		.replace('#main')
-		.then(function () {
+	        this.load("/json/content?id=main", {"json":true})
+		        .render('templates/main.mustache')
+		        .replace('#main')
+		        .then(function () {
                     checkLoggedIn();
-	        });
+	            });
         });
 
 
