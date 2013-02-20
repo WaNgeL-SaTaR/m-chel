@@ -14,7 +14,7 @@ $(document).ready(function() {
 			$('#splash').find('li.slide-open div').fadeIn();
 		},
 		startingSlide: 1,
-		slideWidth: 600,
+		slideWidth: 800,
 		width: 1351,
 		height: 310
 	});
