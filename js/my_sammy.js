@@ -536,7 +536,7 @@ Handlebars.registerHelper('attachNames', function(items) {
             var context = this;
             var categories = cache.get("categories");
 
-            alert(555);
+
             for (i in categories) {
                 if (categories[i].catName == this.params.catName) {
                     alert("Такой раздел уже есть...");
