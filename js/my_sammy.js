@@ -666,7 +666,7 @@ Handlebars.registerHelper('attachNames', function(items) {
 	});
 
 
-        this.get("", function() {
+        this.get("#!/main", function() {
 	        $('#menu_main').addClass('active');
 
             $('#premain').empty();
@@ -767,6 +767,6 @@ Handlebars.registerHelper('attachNames', function(items) {
 
 
     $(function() {
-        app.run('#/')
+        app.run('/index-static.html')
     });
 })(jQuery);
