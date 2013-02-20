@@ -501,6 +501,20 @@ Handlebars.registerHelper('attachNames', function(items) {
             });
         });
 
+        this.post("/json/addcsv", function(){
+            var context = this;
+            var category = this.params.category;
+
+            $("#addcsvform").ajaxSubmit({
+                url: '/json/addcsv',
+                success: function() {
+                    context.trigger('flash', "Записи добавлены.");
+                    context.redirect("#/category/" + category);
+                    app.runRoute("get", "#/category/" + category);
+                }
+            });
+        });
+
         this.post("#/additem", function(){
             var context = this;
             var category = this.params.category;

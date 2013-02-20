@@ -37,6 +37,26 @@
       <button type="submit" class="btn btn-primary btn-large"> Добавить</button>
     </div>
   </form>
+
+
+  <form id="addcsvform" action="/json/addcsv" method="post" enctype="multipart/form-data">
+    <label>Выберите CSV файл для загрузки: </label>
+    <input type="file" name="csv1" />
+    <label class="control-label" for="select01">Раздел:</label>
+    <select name="category" id="select01">
+      <% for (i in categories) {%>
+      <option value="<%= categories[i].catName %>" selected><%= categories[i].catTitle %></option>
+      <% } %>
+    </select>
+
+    <br/>
+    <div class="btn-group">
+      <a href="javascript:history.back();" class="btn btn-large">Закрыть</a>
+      <button type="submit" class="btn btn-primary btn-large"> Добавить</button>
+    </div>
+  </form>
+
+
 <div class="progress progress-striped active">
   <div class="bar"></div >
   <div class="percent">0%</div >
