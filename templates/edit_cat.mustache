@@ -7,9 +7,20 @@
       </small>
     </h1>
   </div>
-  <form action="#/edit_category/" method="post">
+  <form action="#!/edit_category/" method="post">
     <input type="hidden" name="catId" value="{{catId}}">
     <input type="hidden" name="catName" value="{{catName}}">
+
+
+    <label>Общий раздел: </label>
+    <input type="text"
+	   title="Название должно быть введено"
+           x-moz-errormessage="Название должно быть введено"
+           name="catTags"
+           placeholder="Вводить здесь..."
+	   required
+           value="{{catTags}}"/>
+    <br/>
     <label>Название (русскими буквами, например: Спиртные напитки): </label>
     <input type="text"
 	   title="Название должно быть введено"
