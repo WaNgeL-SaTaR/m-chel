@@ -14,6 +14,18 @@
 </ul>
 
 <div>
+
+<div class="pagination">
+  <ul>
+    {{#prevPage}}
+    <li><a href="#!/category/{{../catName}}/tag/{{../tag}}/page/{{../prevPage}}">Предыдущая {{../prevPage}}</a></li>
+    {{/prevPage}}
+    {{#nextPage}}
+    <li><a href="#!/category/{{../catName}}/tag/{{../tag}}/page/{{../nextPage}}">Следующая {{../nextPage}}</a></li>
+    {{/nextPage}}
+  </ul>
+</div>
+
   <!--  <a class="cream" href="#/category/{{catName}}?sort=1"><h4>По убыванию </a>
         <a class="cream" href="#!/category/{{catName}}">По возрастанию</h4></a> -->
   <table class="table table-striped table-condensed">
@@ -59,13 +71,16 @@
   </table>
 
 
-{{#prevPage}}
-  <a class="btn btn-success" href="#!/category/{{../catName}}/tag/{{../tag}}/page/{{../prevPage}}">назад на страницу {{../prevPage}}</a>
-{{/prevPage}}
-
-{{#nextPage}}
-  <a class="btn btn-success" href="#!/category/{{../catName}}/tag/{{../tag}}/page/{{../nextPage}}">вперёд на страницу {{../nextPage}}</a>
-{{/nextPage}}
+<div class="pagination">
+  <ul>
+    {{#prevPage}}
+    <li><a href="#!/category/{{../catName}}/tag/{{../tag}}/page/{{../prevPage}}">Предыдущая {{../prevPage}}</a></li>
+    {{/prevPage}}
+    {{#nextPage}}
+    <li><a href="#!/category/{{../catName}}/tag/{{../tag}}/page/{{../nextPage}}">Следующая {{../nextPage}}</a></li>
+    {{/nextPage}}
+  </ul>
+</div>
 
 
   <div class="admin-only"><h4><a class="cream" href="#/edit_category/{{catId}}">Редактировать раздел</a></h4>
