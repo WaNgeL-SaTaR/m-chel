@@ -25,10 +25,9 @@
       <option value="<%= categories[i].catName %>" selected><%= categories[i].catTitle %></option>
       <% } %>
     </select>
-<!--
-    <label>Перечеркнутая цена (только цифры): </label>
-    <input required type="text" name="old_cost" style="text-decoration:line-through;" class="" value="0"></input>
--->
+
+<!--    <label>Перечеркнутая цена (только цифры): </label> -->
+    <input required type="text" name="old_cost" style="text-decoration:line-through;" class="hide" value="0"></input>
     <label>Цена: </label>
     <input required type="text" name="cost" class="" />
     <br/>
