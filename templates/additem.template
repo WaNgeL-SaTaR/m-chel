@@ -27,7 +27,7 @@
     </select>
 
 <!--    <label>Перечеркнутая цена (только цифры): </label> -->
-    <input required type="text" name="old_cost" style="text-decoration:line-through;" class="hide" value="0"></input>
+    <input required type="text" name="old_cost" style="text-decoration:line-through;display:none;" value="0"></input>
     <label>Цена: </label>
     <input required type="text" name="cost" class="" />
     <br/>
