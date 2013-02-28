@@ -49,6 +49,28 @@ body {
 }
 /**/
 
+.znak {
+
+}
+
+.logo-footer {
+    padding-bottom: 5px;
+    width: 40%;
+    padding-left: 60%;
+}
+
+.adress {
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.adress-border {
+
+    padding-top: 10px;
+    margin-top: 25px;
+    border: 1px dashed black;
+}
+
 .footer-phone {
     background: #333;
     color: white;
@@ -167,7 +189,7 @@ body {
 .top-phone {
     font-size: 35px;
     font-weight: bold;
-    line-height: 50px;
+    line-height: 37px;
 }
 
 .partner-sign {
@@ -186,6 +208,7 @@ body {
     -webkit-background-size: contain;
     background-image: url(../img/call-center-agent.png);
     background-position: right bottom;
+
 }
 
 .top-img {
@@ -195,8 +218,6 @@ body {
 }
 
 .top-img-house {
-    display:block;
-    margin:0 auto;
     height: 60px;
 }
 
@@ -206,7 +227,7 @@ body {
 }
 
 footer {
-    padding-bottom: 30px;
     color: #f2f2f2;
     background-color: #333333;
+    background-image: url(../img/bg-logo.png);
 }
