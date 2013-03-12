@@ -49,6 +49,59 @@ body {
 }
 /**/
 
+a.tags-hover:hover  {
+    background: #08c;
+    color: white;
+    -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;
+
+    padding: 6px 10px;
+    font-size: 11.844px;
+    font-weight: bold;
+    line-height: 14px;
+    color: white;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+
+.label  {
+    padding: 5px;
+}
+.label a {
+    color: white;
+}
+
+#menu_login {
+    font-size: 2px;
+    font-color: #333333;
+}
+
+.blue {
+    color: #08c;
+}
+
+.adres {
+    height: 150px;
+    margin-left: 200px;
+    margin-bottom: 10px;
+}
+
+blockquote {
+    text-align: left;
+    border-left: 5px solid #08c;
+}
+
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.bord-right {
+    padding-right: 10px;
+    border-right: 2px solid #f2f2f2;
+}
+
 .znak {
 
 }

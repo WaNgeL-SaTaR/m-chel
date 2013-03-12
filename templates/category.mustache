@@ -7,9 +7,13 @@
 
 
 <ul class="breadcrumb">
-  <li><a href="#!/category/{{catName}}/tag/*/page/0">всё</a> <span class="divider">/</span></li>
+  <li>
+      <a class="tags-hover" href="#!/category/{{catName}}/tag/*/page/0">всё</a>
+    <span class="divider">/</span></li>
   {{#tags}}
-  <li><a href="#!/category/{{../catName}}/tag/{{.}}/page/0">{{.}}</a> <span class="divider">/</span></li>
+  <li>
+      <a class="tags-hover" href="#!/category/{{../catName}}/tag/{{.}}/page/0">{{.}}</a>
+    <span class="divider">/</span></li>
   {{/tags}}
 </ul>
 
