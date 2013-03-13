@@ -137,14 +137,8 @@ Handlebars.registerHelper('attachNames', function(items) {
 
 //        $('#main').empty();
 //        $('#premain').empty();
-        this.load("/json/categories", {"json":true})
-		    .then(function(categories) {
-                var cat = {};
-                for (i in categories) {
-                    if (categories[i].catName == category) {
-                        cat = categories[i];
-                    }
-                }
+        this.load("/json/getcategorybyname?category="+ encodeURIComponent(category), {"json":true})
+ 		    .then(function(cat) {
                 this.load('/json/tagscategory?category=' + encodeURIComponent(category), {"json":true})
                     .then(function(tags) {
 	                    this.load(link + '?category=' + encodeURIComponent(category) + "&page=" + page + "&tag=" + tag, {"json":true})
