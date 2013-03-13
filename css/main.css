@@ -49,11 +49,30 @@ body {
 }
 /**/
 
+footer h4 a {
+
+}
+
+footer h4 a:hover {
+    color: white;
+    text-decoration: none;
+}
+.small {
+    font-size: 16px;
+    color: black;
+}
+
+.test {
+    color: black;
+    background: #ff4200;
+}
+
 a.tags-hover:hover  {
     background: #08c;
     color: white;
-    -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;
-
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
     padding: 6px 10px;
     font-size: 11.844px;
     font-weight: bold;
@@ -125,9 +144,13 @@ blockquote p {
 }
 
 .footer-phone {
-    background: #08c;
-    color: white;
-    border-bottom: 1px dashed white;
+    padding-top: 5px;
+    background: #ffcd11;
+    color: black;
+}
+
+.footer-phone h1 {
+    line-height: 25px;
 }
 
 .adres {
@@ -164,10 +187,14 @@ blockquote p {
     display: block;
     box-sizing: border-box;
     float: left;
-    background-color: #333;
+    background: #333;
     color: #f2f2f2;
 }
 
+.active-menu {
+    background: #ffcd11;
+    color: black;
+}
 
 .triple-div:hover {
     color: black;
@@ -240,9 +267,10 @@ blockquote p {
 }
 
 .top-phone {
+    color: #08c;
     font-size: 35px;
     font-weight: bold;
-    line-height: 37px;
+    line-height: 40px;
 }
 
 .partner-sign {

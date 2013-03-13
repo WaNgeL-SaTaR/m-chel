@@ -16,6 +16,6 @@ $(document).ready(function() {
 		startingSlide: 1,
 		slideWidth: 800,
 		width: 1351,
-		height: 310
+		height: 270
 	});
 });

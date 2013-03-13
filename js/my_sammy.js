@@ -212,9 +212,9 @@ Handlebars.registerHelper('attachNames', function(items) {
 			                    .replace('#main')
 			                    .then(function () {
 				                $("#main").fadeIn('fast');
-	                                        $('.nav li').removeClass('active');
+						$('.nav li').removeClass('active');
 				                $('#cat_' + category).addClass('active');
-                                                checkLoggedIn();
+				                checkLoggedIn();
 	                                    });
 		                    });
 	                        });
@@ -442,7 +442,9 @@ Handlebars.registerHelper('attachNames', function(items) {
 		            this.render('templates/main.mustache',data)
 		                .replace('#main')
 		                .then(function () {
-                            checkLoggedIn();
+				    $('.triple-div').removeClass('active-menu');
+	                            $('#menu_' + page).addClass('active-menu');
+				    checkLoggedIn();
 	                    });
                 });
 	    });
