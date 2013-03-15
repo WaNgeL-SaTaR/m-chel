@@ -82,10 +82,6 @@ a.tags-hover:hover  {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    padding: 6px 10px;
-    font-size: 11.844px;
-    font-weight: bold;
-    line-height: 14px;
     color: white;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     white-space: nowrap;
@@ -179,6 +175,7 @@ blockquote p {
 
 .triple {
     border-bottom: 5px solid #ffcd11;
+    background-color: #333;
 }
 
 .triple::before, .triple::after {
@@ -192,7 +189,7 @@ blockquote p {
 }
 
 .triple-div {
-    width: 33.333333%;
+    width: 33.23333%;
     display: block;
     box-sizing: border-box;
     float: left;
