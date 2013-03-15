@@ -439,8 +439,8 @@ Handlebars.registerHelper('attachNames', function(items) {
 				    $('.triple-div').removeClass('active-menu');
 				    $('h5').next().collapse('hide');
 	                            $('#menu_' + page).addClass('active-menu');
-				    $('.active-menu:contains(Черный металлопрокат)').each(function(){$('h5:contains(Черный металл)').next().collapse('show')});
-				    $('.active-menu:contains(Нержавеюший металлопрокат)').each(function(){$('h5:contains(Нержавеюший металлопрокат)').next().collapse('show')});
+				    $('.active-menu:contains(Черный металлопрокат)').each(function(){$('h5:contains(Черный металлопрокат)').next().collapse('show')});
+				    $('.active-menu:contains(Нержавеюший металлопрокат)').each(function(){$('h5:contains(Нержавеющий металлопрокат)').next().collapse('show')});
 				    $('.active-menu:contains(Цветной металлопрокат)').each(function(){$('h5:contains(Цветной металлопрокат)').next().collapse('show')});
 				    checkLoggedIn();
 	                    });
