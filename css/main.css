@@ -49,6 +49,7 @@ body {
 }
 /**/
 
+
 .subCat-h5 {
     color: black;
 }
@@ -200,6 +201,15 @@ blockquote p {
 .active-menu {
     background: #ffcd11;
     color: black;
+}
+
+.active {
+    background-color: #08c;
+}
+
+.active a {
+    color: white;
+    text-decoration: none;
 }
 
 .triple-div:hover {
