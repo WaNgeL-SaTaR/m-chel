@@ -1,15 +1,23 @@
 {{#maincats}}
 
-  <h5>{{subCat}}</h5>
+<h5><a class="subCat-h5" data-toggle="collapse-next">{{subCat}}</a></h5>
 
+<div class="collapse in">
 {{#cats}}
 
-<li class="" id="cat_{{ catName }}">
+<li id="cat_{{ catName }}">
   <a href="#!/category/{{ catName }}/tag/*/page/0">
     <i class="icon-chevron-right"></i>
     {{ catTitle }}
   </a>
 </li>
-{{/cats}}
 
+{{/cats}}
+</div>
 {{/maincats}}
+
+<script>
+$('body').on('click.collapse-next.data-api', '[data-toggle=collapse-next]', function() {
+   $(this).parent().next().collapse('toggle');
+});
+</script>

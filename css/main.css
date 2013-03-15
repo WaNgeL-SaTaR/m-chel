@@ -49,6 +49,15 @@ body {
 }
 /**/
 
+.subCat-h5 {
+    color: black;
+}
+
+.subCat-h5:hover {
+    color: black;
+    cursor: pointer;
+}
+
 footer h4 a {
 
 }
