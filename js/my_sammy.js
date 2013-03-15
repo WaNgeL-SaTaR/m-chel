@@ -437,7 +437,11 @@ Handlebars.registerHelper('attachNames', function(items) {
 		                .replace('#main')
 		                .then(function () {
 				    $('.triple-div').removeClass('active-menu');
+				    $('h5').next().collapse('hide');
 	                            $('#menu_' + page).addClass('active-menu');
+				    $('.active-menu:contains(Черный металлопрокат)').each(function(){$('h5:contains(Черный металл)').next().collapse('show')});
+				    $('.active-menu:contains(Нержавеюший металлопрокат)').each(function(){$('h5:contains(Нержавеюший металлопрокат)').next().collapse('show')});
+				    $('.active-menu:contains(Цветной металлопрокат)').each(function(){$('h5:contains(Цветной металлопрокат)').next().collapse('show')});
 				    checkLoggedIn();
 	                    });
                 });
