@@ -4,6 +4,12 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
+
+
 /* slider */
 #splash div {
     -moz-border-radius:5px;-webkit-border-radius:5px;
@@ -49,14 +55,27 @@ body {
 }
 /**/
 
+.active-tag {
+    background: #08c;
+    color: white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+    vertical-align: baseline;
+    text-decoration: none;
+}
 
 .subCat-h5 {
     color: black;
 }
 
 .subCat-h5:hover {
-    color: black;
+    color: #08c;
     cursor: pointer;
+    text-decoration: none;
 }
 
 footer h4 a {

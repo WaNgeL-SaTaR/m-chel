@@ -435,6 +435,7 @@ Handlebars.registerHelper('attachNames', function(items) {
 		            this.render('templates/main.mustache',data)
 		                .replace('#main')
 		                .then(function () {
+				    $('h5').next().collapse('hide');
 				    $('.triple-div').removeClass('active-menu');
 				    $('h5').next().collapse('hide');
 	                            $('#menu_' + page).addClass('active-menu');
@@ -451,8 +452,9 @@ Handlebars.registerHelper('attachNames', function(items) {
 
             $('#premain').empty();
             this.trigger('update-catregories');
-	        this.render('templates/additem.template')
-		        .replace('#main');
+	    this.render('templates/additem.template')
+		.replace('#main');
+
             // FIXME: update trigger before render
         });
 
@@ -699,7 +701,7 @@ Handlebars.registerHelper('attachNames', function(items) {
                     .value();
 
 		        this.render('templates/categories.mustache', {maincats : grouped})
-			        .replace('#categories');
+			        .replace('#categories')
 		    });
 	});
 
