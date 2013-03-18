@@ -70,6 +70,7 @@ a:hover {
 
 .subCat-h5 {
     color: black;
+    font-size: 18px;
 }
 
 .subCat-h5:hover {
@@ -252,6 +253,11 @@ blockquote p {
 
 .metall {
     padding-top: 15px;
+}
+
+.metall li {
+    line-height: 22px;
+    font-size: 16px;
 }
 
 #myTab li a {
