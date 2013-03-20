@@ -54,7 +54,9 @@ a:hover {
     border-left: 1px solid black;
 }
 /**/
-
+.breadcrumb { 
+    text-align: left;
+}
 .active-tag {
     background: #08c;
     color: white;
