@@ -24,6 +24,7 @@ hr {
     padding:15px;
     position:absolute;
     z-index:10;
+    width: 70%;
 }
 
 #splash h2 {
