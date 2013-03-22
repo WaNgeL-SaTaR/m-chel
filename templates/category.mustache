@@ -9,13 +9,13 @@
 Наличие на складе
 </h3>
 
-<ul id="cat"  class="breadcrumb">
+<ul id="cat" class="breadcrumb">
   <li>
     <a class="tags-hover active-tag" href="#!/category/{{catName}}/tag/*/page/0">всё</a>
     <span class="divider">/</span></li>
   {{#tags}}
   <li>
-    <a class="tags-hover" id="tag_{{.}}" href="#!/category/{{../catName}}/tag/{{.}}/page/0">{{.}}</a>
+    <a class="tags-hover {{.}}" id="tag{{.}}" href="#!/category/{{../catName}}/tag/{{.}}/page/0">{{.}}</a>
     <span class="divider">/</span></li>
   {{/tags}}
 </ul>

@@ -162,6 +162,15 @@ Handlebars.registerHelper('attachNames', function(items) {
 				                           // $("#main").fadeOut('fast').fadeIn('fast');
 							$('.nav li').removeClass('active');
 				                        $('#cat_' + category).addClass('active');
+
+
+//							var i=0;
+//							$("#cat li a").each(function(){
+//							    i++;
+//							    $(this).attr("id","tag"+i);
+//							});
+							$("#tag" +tag).addClass('active-tag');
+
                                             checkLoggedIn();
 	                                    });
 		                        });
@@ -427,15 +436,15 @@ Handlebars.registerHelper('attachNames', function(items) {
             $('#premain').empty();
             this.render('templates/main.mustache', {"contentId":page})
                 .replace("#main");
+		$('.triple-div').removeClass('active-menu');
+	        $('#menu_' + page).addClass('active-menu');
+		$('h5').next().collapse('hide');
 
-		    $('h5').next().collapse('hide');
-		    $('.triple-div').removeClass('active-menu');
 
-	            $('#menu_' + page).addClass('active-menu');
-		    $('.active-menu:contains(Черный металлопрокат)').each(function(){$('h5:contains(Черный металлопрокат)').next().collapse('show')});
-		    $('.active-menu:contains(Нержавеющий металлопрокат)').each(function(){$('h5:contains(Нержавеющий металлопрокат)').next().collapse('show')});
-		    $('.active-menu:contains(Цветной металлопрокат)').each(function(){$('h5:contains(Цветной металлопрокат)').next().collapse('show')});
 
+		$('.active-menu:contains(Черный металлопрокат)').each(function(){$('h5:contains(Черный металлопрокат)').next().collapse('show')});
+		$('.active-menu:contains(Нержавеющий металлопрокат)').each(function(){$('h5:contains(Нержавеющий металлопрокат)').next().collapse('show')});
+		$('.active-menu:contains(Цветной металлопрокат)').each(function(){$('h5:contains(Цветной металлопрокат)').next().collapse('show')});
 
 
 	        this.load("/json/content?id=" + page, {"json":true})
