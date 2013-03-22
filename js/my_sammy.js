@@ -169,7 +169,8 @@ Handlebars.registerHelper('attachNames', function(items) {
 //							    i++;
 //							    $(this).attr("id","tag"+i);
 //							});
-							$("#tag" +tag).addClass('active-tag');
+		$('#tag:contains({{.}})').addClass('active-tag');
+				//			$("#tag" +tag).addClass('active-tag');
 
                                             checkLoggedIn();
 	                                    });
