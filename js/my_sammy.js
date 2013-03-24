@@ -439,8 +439,6 @@ Handlebars.registerHelper('attachNames', function(items) {
                 .replace("#main");
 		$('.triple-div').removeClass('active-menu');
 	        $('#menu_' + page).addClass('active-menu');
-		$('h5').next().collapse('hide');
-
 
 
 		$('.active-menu:contains(Черный металлопрокат)').each(function(){$('h5:contains(Черный металлопрокат)').next().collapse('show')});
