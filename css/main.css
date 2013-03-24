@@ -62,6 +62,16 @@ hr {
     border-left: 1px solid black;
 }
 /**/
+
+.left-ico {
+    font-size: 70px;
+    color: #08C;
+}
+
+.red-ico {
+    color: red;
+}
+
 .hrh {
     margin: 0px;
 

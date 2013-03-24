@@ -144,7 +144,7 @@ Handlebars.registerHelper('attachNames', function(items) {
 	                    this.load(link + '?category=' + encodeURIComponent(category) + "&page=" + page + "&tag=" + tag, {"json":true})
 		                    .then(function(items) {
 		                        $("#main").fadeIn('fast', function() {
-                                    if (items.length < 20) {
+                                    if (items.length < 30) {
                                         nextPage = false;
                                     }
                                     context.render('templates/category.mustache',
@@ -455,7 +455,7 @@ Handlebars.registerHelper('attachNames', function(items) {
 
 				    setTimeout(function () {
 					$(document).ready(function () {
-					    $(".collapse").collapse({toggle: false});
+					    $('h5').next().collapse({toggle: false});
 					    $('h5').next().collapse('hide');
 
 					    $('.active-menu:contains(Черный металлопрокат)').each(function(){$('h5:contains(Черный металлопрокат)').next().collapse('show')});
