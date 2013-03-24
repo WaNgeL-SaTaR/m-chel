@@ -128,7 +128,7 @@ Handlebars.registerHelper('attachNames', function(items) {
         var nextPage = page + 1;
         var prevPage = false;
 
-        if (tag != "*") {
+        if (tag != "всё") {
             link = "/json/categorytag"
         }
         if (page > 0) {
@@ -453,7 +453,12 @@ Handlebars.registerHelper('attachNames', function(items) {
 				    $('.triple-div').removeClass('active-menu');
 				    $('#menu_' + page).addClass('active-menu');
 
-				    $(document).ready(function () {
+
+
+
+    $(document).bind("ajaxComplete",function(){
+
+
 					$(".collapse").collapse({toggle: false});
 					$('h5').next().collapse('hide');
 
