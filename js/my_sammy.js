@@ -437,13 +437,7 @@ Handlebars.registerHelper('attachNames', function(items) {
             $('#premain').empty();
             this.render('templates/main.mustache', {"contentId":page})
                 .replace("#main");
-		$('.triple-div').removeClass('active-menu');
-	        $('#menu_' + page).addClass('active-menu');
 
-
-		$('.active-menu:contains(Черный металлопрокат)').each(function(){$('h5:contains(Черный металлопрокат)').next().collapse('show')});
-		$('.active-menu:contains(Нержавеющий металлопрокат)').each(function(){$('h5:contains(Нержавеющий металлопрокат)').next().collapse('show')});
-		$('.active-menu:contains(Цветной металлопрокат)').each(function(){$('h5:contains(Цветной металлопрокат)').next().collapse('show')});
 
 
 	        this.load("/json/content?id=" + page, {"json":true})
@@ -454,6 +448,17 @@ Handlebars.registerHelper('attachNames', function(items) {
 		            this.render('templates/main.mustache',data)
 		                .replace('#main')
 		                .then(function () {
+
+$(document).ready(function () {
+		$('.triple-div').removeClass('active-menu');
+	        $('#menu_' + page).addClass('active-menu');
+
+
+		$('.active-menu:contains(Черный металлопрокат)').each(function(){$('h5:contains(Черный металлопрокат)').next().collapse('show')});
+		$('.active-menu:contains(Нержавеющий металлопрокат)').each(function(){$('h5:contains(Нержавеющий металлопрокат)').next().collapse('show')});
+		$('.active-menu:contains(Цветной металлопрокат)').each(function(){$('h5:contains(Цветной металлопрокат)').next().collapse('show')});
+
+});
 
 				    checkLoggedIn();
 	                    });
