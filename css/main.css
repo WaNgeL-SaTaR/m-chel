@@ -10,9 +10,12 @@ a:hover {
 
 hr {
     margin: 0px;
-    
+
 }
 
+.collapse-header {
+    cursor: pointer;
+}
 
 /* slider */
 #splash div {
@@ -60,11 +63,11 @@ hr {
 }
 /**/
 .hrh {
-    margin: 0px;    
-    
+    margin: 0px;
+
 }
 
-.breadcrumb { 
+.breadcrumb {
     text-align: left;
 }
 .active-tag {
@@ -130,10 +133,14 @@ a.tags-hover:hover  {
 }
 
 #menu_login {
-    font-size: 2px;
-    font-color: #333333;
+    color: white;
 }
 
+#menu_login:hover {
+    color: white:
+    text-decoration: none;
+    cursor: default;
+}
 .blue {
     color: #08c;
 }
