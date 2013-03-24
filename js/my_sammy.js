@@ -464,7 +464,7 @@ Handlebars.registerHelper('attachNames', function(items) {
 
 
 					});
-				    }, 500);
+				    }, 800);
 				    checkLoggedIn();
 	                    });
                 });
