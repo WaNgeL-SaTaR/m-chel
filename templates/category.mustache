@@ -11,11 +11,11 @@
 
 <ul id="cat" class="breadcrumb">
   <li>
-    <a class="tags-hover" href="#!/category/{{catName}}/tag/*/page/0">всё</a>
+    <a class="tags-hover all" href="#!/category/{{catName}}/tag/*/page/0">всё</a>
     <span class="divider">/</span></li>
   {{#tags}}
   <li>
-    <a class="tags-hover {{.}}" id="tag{{.}}" href="#!/category/{{../catName}}/tag/{{.}}/page/0">{{.}}</a>
+    <a class="tags-hover tag {{.}}" title="{{.}}" href="#!/category/{{../catName}}/tag/{{.}}/page/0">{{.}}</a>
     <span class="divider">/</span></li>
   {{/tags}}
 </ul>
@@ -60,7 +60,7 @@
 	</td>
 	<td>
 	  {{#tags}}
-	  <a href="#!/categorytag/{{../category}}/{{.}}">{{.}}</a>
+	  <a href="#!/category/{{../catName}}/tag/{{.}}/page/0">{{.}}</a>
 	  {{/tags}}
 	</td>
 	<td>

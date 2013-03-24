@@ -158,19 +158,19 @@ Handlebars.registerHelper('attachNames', function(items) {
                                                     "nextPage" : nextPage,
                                                     "prevPage" : prevPage})
 			                            .replace('#main')
-			                            .then(function () {
+			                        .then(function () {
 				                           // $("#main").fadeOut('fast').fadeIn('fast');
 							$('.nav li').removeClass('active');
 				                        $('#cat_' + category).addClass('active');
 
 
-//							var i=0;
-//							$("#cat li a").each(function(){
-//							    i++;
-//							    $(this).attr("id","tag"+i);
-//							});
-		$('#tag:contains({{.}})').addClass('active-tag');
-				//			$("#tag" +tag).addClass('active-tag');
+						    $('.tag').filter(function () {
+
+							    if   (this.innerHTML == tag)   {
+								return true;
+							    }
+
+							}).addClass('active-tag');
 
                                             checkLoggedIn();
 	                                    });
