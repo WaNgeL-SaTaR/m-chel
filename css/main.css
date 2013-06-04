@@ -382,3 +382,14 @@ footer {
     background-color: #333333;
     background-image: url(../img/bg-logo.png);
 }
+
+@media screen and (max-width: 930px) {
+.top-cont {
+    background: none;
+}
+
+.footer-phone h1 {
+    line-height: 35px;
+}
+
+}
