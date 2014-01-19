@@ -2,6 +2,8 @@ body {
     color: black;
     text-align: justify;
     font-family: 'Ubuntu', sans-serif;
+    width: 1351px;
+    margin: 0 auto;
 }
 
 a:hover {
